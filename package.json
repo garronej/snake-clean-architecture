@@ -10,8 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@mui/material": "^5.15.2",
+    "evt": "^2.5.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "redux-clean-architecture": "^4.2.2",
+    "tsafe": "^1.6.5",
+    "tss-react": "^4.9.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
