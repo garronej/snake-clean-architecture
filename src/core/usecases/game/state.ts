@@ -2,6 +2,8 @@ import { createUsecaseActions } from "redux-clean-architecture";
 import { id } from "tsafe/id";
 import { assert } from "tsafe/assert";
 import { same } from "evt/tools/inDepth/same";
+import { movePointOnGrid } from "./utils/movePointOnGrid";
+import { isOnSnake } from "./utils/isOnSnake";
 
 type State = State.NotStarted | State.Running;
 
@@ -61,39 +63,41 @@ export const { actions, reducer } = createUsecaseActions({
 
             assert(state.stateDescription === "running");
 
-            switch (state.snakeDirection) {
-                case "up": state.snakeHeadPosition.y--; break;
-                case "down": state.snakeHeadPosition.y++; break;
-                case "left": state.snakeHeadPosition.x--; break;
-                case "right": state.snakeHeadPosition.x++; break;
-            }
+            state.snakeHeadPosition = movePointOnGrid({
+                "gridDimensions": state.gridDimensions,
+                "point": state.snakeHeadPosition,
+                "direction": state.snakeDirection
+            });
 
-            if (state.snakeHeadPosition.x === state.gridDimensions.width) {
-                state.snakeHeadPosition.x = 0;
-            }
-
-            if (state.snakeHeadPosition.x === -1) {
-                state.snakeHeadPosition.x = state.gridDimensions.width - 1;
-            }
-
-            if (state.snakeHeadPosition.y === state.gridDimensions.height) {
-                state.snakeHeadPosition.y = 0;
-            }
-
-            if (state.snakeHeadPosition.y === -1) {
-                state.snakeHeadPosition.y = state.gridDimensions.height - 1;
-            }
-
-            state.snakeTail.unshift(state.snakeDirection);
+            state.snakeTail.unshift((() => {
+                switch (state.snakeDirection) {
+                    case "up": return "down";
+                    case "down": return "up";
+                    case "left": return "right";
+                    case "right": return "left";
+                }
+            })());
 
             if (same(state.snakeHeadPosition, state.fruitPosition)) {
 
-                state.fruitPosition = {
-                    "x": Math.floor(Math.random() * state.gridDimensions.width),
-                    "y": Math.floor(Math.random() * state.gridDimensions.height)
-                };
+                while (true) {
 
-                //TODO: Check if the fruit is not on the snake
+                    state.fruitPosition = {
+                        "x": Math.floor(Math.random() * state.gridDimensions.width),
+                        "y": Math.floor(Math.random() * state.gridDimensions.height)
+                    };
+
+                    if (!isOnSnake({
+                        "snakeHeadPosition": state.snakeHeadPosition,
+                        "snakeTail": state.snakeTail,
+                        "gridDimensions": state.gridDimensions,
+                        "point": state.fruitPosition
+                    })) {
+                        break;
+                    }
+
+                }
+
 
             } else {
                 state.snakeTail.pop();
@@ -120,7 +124,8 @@ export const { actions, reducer } = createUsecaseActions({
             }
 
             state.snakeDirection = direction;
-        }
+        },
+        //"notifyFruitEaten": () => {}
     }
 });
 

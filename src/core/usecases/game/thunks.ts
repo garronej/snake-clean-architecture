@@ -37,7 +37,7 @@ export const thunks = {
                 dispatch(actions.update());
 
             },
-            500
+            250
         );
 
     },

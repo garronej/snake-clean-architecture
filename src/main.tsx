@@ -2,7 +2,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createCoreProvider } from "core";
-import { Leaderboard } from "ui/Leaderboard";
+//import { Leaderboard } from "ui/Leaderboard";
+import { Game } from "ui/Game";
 
 const { CoreProvider } = createCoreProvider({
     "apiBaseURL": undefined
@@ -16,7 +17,7 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <CoreProvider>
-            <Leaderboard />
+            <Game />
         </CoreProvider>
     </React.StrictMode>
 );
