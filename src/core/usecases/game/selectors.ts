@@ -1,6 +1,6 @@
 import type { State as RootState } from "core/bootstrap";
 import { name } from "./state";
-import { createSelector } from "redux-clean-architecture";
+import { createSelector } from "clean-architecture";
 import { isOnSnake } from "./utils/isOnSnake";
 import { same } from "evt/tools/inDepth/same";
 

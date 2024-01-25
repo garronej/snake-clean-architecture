@@ -1023,6 +1023,15 @@ chalk@^4.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
+clean-architecture@^4.3.3:
+  version "4.3.3"
+  resolved "https://registry.yarnpkg.com/clean-architecture/-/clean-architecture-4.3.3.tgz#3c0bfe64ca3412d289167cd8a69c40f0c174ebd3"
+  integrity sha512-0QqXphwpAxOO9kJMRdu82vDwMDiVqt5P81FxGuBWqze7HCloAGxdtsUghStTpFAZIIZGSIU7rXdfvOzFB4j/Lg==
+  dependencies:
+    "@reduxjs/toolkit" "^1.9.6"
+    minimal-polyfills "^2.2.3"
+    tsafe "^1.6.5"
+
 clsx@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.1.0.tgz#e851283bcb5c80ee7608db18487433f7b23f77cb"
@@ -1853,15 +1862,6 @@ react@^18.2.0:
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
   dependencies:
     loose-envify "^1.1.0"
-
-redux-clean-architecture@^4.2.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/redux-clean-architecture/-/redux-clean-architecture-4.2.2.tgz#844051645d9bfae96282f4467cb2c7f022f40477"
-  integrity sha512-jb6LBh867OWlUJoh9oMcP2RDV1s/+OZvv86tpbC61qXTCZVbG3TSYhrK+1lBqjp1o6HPTwn0KB4c4oLpjfSfNg==
-  dependencies:
-    "@reduxjs/toolkit" "^1.9.6"
-    minimal-polyfills "^2.2.3"
-    tsafe "^1.6.5"
 
 redux-thunk@^2.4.2:
   version "2.4.2"

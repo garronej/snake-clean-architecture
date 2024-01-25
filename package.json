@@ -15,7 +15,7 @@
     "evt": "^2.5.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "redux-clean-architecture": "^4.2.2",
+    "clean-architecture": "^4.3.3",
     "tsafe": "^1.6.5",
     "tss-react": "^4.9.3"
   },

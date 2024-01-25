@@ -1,6 +1,6 @@
 import { actions, name } from "./state";
 import type { Thunks } from "core/bootstrap";
-import { createUsecaseContextApi } from "redux-clean-architecture";
+import { createUsecaseContextApi } from "clean-architecture";
 import { id } from "tsafe/id";
 import { assert } from "tsafe/assert";
 

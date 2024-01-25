@@ -2,7 +2,7 @@
 import { usecases } from "core/usecases";
 import type { ScoreSaver } from "core/ports/ScoreSaver";
 
-import { createCore, type GenericCore } from "redux-clean-architecture";
+import { createCore, type GenericCore } from "clean-architecture";
 
 type ParamsOfBootstrap = {
     apiBaseURL: string | undefined;

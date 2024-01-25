@@ -1,5 +1,5 @@
 
-import { createUsecaseActions } from "redux-clean-architecture";
+import { createUsecaseActions } from "clean-architecture";
 import { id } from "tsafe/id";
 
 type State = State.NotFetched | State.Ready;
