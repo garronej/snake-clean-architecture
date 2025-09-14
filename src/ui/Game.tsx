@@ -1,13 +1,16 @@
 
 import { useEffect } from "react";
-import { useCore, useCoreState } from "core";
+import { getCoreSync, useCoreState } from "core";
 import { useEvt } from "evt/hooks";
 import oofMp3Url from "./assets/oof.mp3";
 
 
 export function Game() {
 
-    const { game } = useCore().functions;
+    const {
+      functions: { game },
+      evts: { evtGame },
+    } = getCoreSync();
 
     useEffect(
         () => {
@@ -56,14 +59,8 @@ export function Game() {
         []
     );
 
-
-
-    const { evtGame } = useCore().evts;
-
     useEvt(
         ctx => {
-
-
             evtGame.attach(
                 event => event.action === "play eat fruit sound",
                 ctx,
@@ -72,7 +69,6 @@ export function Game() {
                     audio.play()
                 }
             );
-
         },
         []
     );

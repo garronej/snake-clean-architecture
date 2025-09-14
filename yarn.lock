@@ -1023,14 +1023,14 @@ chalk@^4.0.0:
     ansi-styles "^4.1.0"
     supports-color "^7.1.0"
 
-clean-architecture@^4.3.3:
-  version "4.3.3"
-  resolved "https://registry.yarnpkg.com/clean-architecture/-/clean-architecture-4.3.3.tgz#3c0bfe64ca3412d289167cd8a69c40f0c174ebd3"
-  integrity sha512-0QqXphwpAxOO9kJMRdu82vDwMDiVqt5P81FxGuBWqze7HCloAGxdtsUghStTpFAZIIZGSIU7rXdfvOzFB4j/Lg==
+clean-architecture@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/clean-architecture/-/clean-architecture-5.0.1.tgz#40c69a86f79f48ea96df760922930c6192dcd4dd"
+  integrity sha512-+znbQYlLzx/YTEkczQ72Wj+/MTcCBFQMIL4PO9wfv7bb5E3fS9q4ACasttyR+XkKs/BLiajk5dgYtjCxXQ8JtQ==
   dependencies:
     "@reduxjs/toolkit" "^1.9.6"
     minimal-polyfills "^2.2.3"
-    tsafe "^1.6.5"
+    tsafe "^1.8.10"
 
 clsx@^2.0.0:
   version "2.1.0"
@@ -2058,6 +2058,11 @@ tsafe@^1.6.6:
   version "1.6.6"
   resolved "https://registry.yarnpkg.com/tsafe/-/tsafe-1.6.6.tgz#fd93e64d6eb13ef83ed1650669cc24bad4f5df9f"
   integrity sha512-gzkapsdbMNwBnTIjgO758GujLCj031IgHK/PKr2mrmkCSJMhSOR5FeOuSxKLMUoYc0vAA4RGEYYbjt/v6afD3g==
+
+tsafe@^1.8.10:
+  version "1.8.10"
+  resolved "https://registry.yarnpkg.com/tsafe/-/tsafe-1.8.10.tgz#98e28f0beeca4e6632a8481a300fa85dd92826c0"
+  integrity sha512-2bBiNHk6Ts4LZQ4+6OxF/BtkJ8YWqo1VMbMo6qrRIZoqAwM8xuwWUx9g3C/p6cCdUmNWeOWIaiJzgO5zWy1Cdg==
 
 tsconfck@^3.0.1:
   version "3.0.1"

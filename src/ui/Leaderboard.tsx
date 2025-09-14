@@ -1,5 +1,5 @@
 
-import { useCore, useCoreState } from "core";
+import { getCoreSync, useCoreState } from "core";
 import { useEffect } from "react";
 import CircularProgress from "@mui/material/CircularProgress";
 
@@ -11,7 +11,9 @@ export function Leaderboard(props: Props) {
 
     const { className } = props;
 
-    const { leaderboard } = useCore().functions;
+    const {
+      functions: { leaderboard },
+    } = getCoreSync();
 
     useEffect(
         () => {

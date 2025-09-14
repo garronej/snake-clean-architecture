@@ -1,8 +1,11 @@
-
-
 import { createReactApi } from "clean-architecture/react";
-import { bootstrapCore } from "core/bootstrap";
+import type { ParamsOfBootstrapCore } from "./bootstrap";
 
-export const { createCoreProvider, useCore, useCoreState } = createReactApi({
-    bootstrapCore
-});
+export const { triggerCoreBootstrap, getCoreSync, useCoreState } =
+  createReactApi({
+    bootstrapCore: async (params: ParamsOfBootstrapCore) => {
+      const { bootstrapCore } = await import("./bootstrap");
+
+      return bootstrapCore(params);
+    },
+  });

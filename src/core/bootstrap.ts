@@ -4,7 +4,7 @@ import type { ScoreSaver } from "core/ports/ScoreSaver";
 
 import { createCore, type GenericCore } from "clean-architecture";
 
-type ParamsOfBootstrap = {
+export type ParamsOfBootstrapCore = {
     apiBaseURL: string | undefined;
 };
 
@@ -19,7 +19,7 @@ export type CreateEvt = Core["types"]["CreateEvt"];
 export type Thunks = Core["types"]["Thunks"];
 
 export async function bootstrapCore(
-    params: ParamsOfBootstrap
+    params: ParamsOfBootstrapCore
 ) {
     const { apiBaseURL } = params;
 
